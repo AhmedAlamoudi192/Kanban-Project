@@ -1,0 +1,19 @@
+<main>
+<div *ngIf="!(firebaseAuth.authState|async)">
+    <h1>Login</h1>
+    <button mat-raised-button appGoogleSignin >
+        <img src="/assets/google-icon.svg" alt="google logo"> login with google
+    </button>
+    <h5 class="top-p">OR</h5>
+
+    <app-email-loginpage></app-email-loginpage>
+
+</div>
+
+<div *ngIf="firebaseAuth.authState|async as user" class="logout">
+<p>logged in as <strong>{{ user.email }}</strong></p>    
+<button mat-stroked-button (click)="firebaseAuth.signOut()">logout </button>
+</div>
+</main>
+
+

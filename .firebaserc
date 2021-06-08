@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kanban-project-5f5b8": {
+      "hosting": {
+        "Kanban-Project": [
+          "kanban-project-5f5b8"
+        ]
+      }
+    }
+  }
+}

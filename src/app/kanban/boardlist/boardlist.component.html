@@ -1,0 +1,23 @@
+<div
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  [cdkDropListOrientation] = "(this.isHandset$|async) ? 'vertical': 'horizontal'"
+  [class.pcBoards]="!(isHandset$|async)"
+  [class.mobileBoards]="(isHandset$|async)"
+  (cdkDropListDropped)="drop($event)"
+>
+  <app-board cdkDrag *ngFor="let board of boards" [board]="board">
+    <mat-icon cdkDragHandle class="handle">drag_indicator</mat-icon>
+  </app-board>
+</div>
+<div class="createBtn">
+  <button
+  mat-raised-button
+  cdkDragDisabled
+  (click)="openBoardDialog()"
+  id="create"
+>
+  Create a Board
+</button>
+</div>
+
